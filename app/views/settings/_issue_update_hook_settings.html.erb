@@ -1,0 +1,55 @@
+<table>
+  <tbody>
+    <tr>
+      <th>Select projects to minotor</th>
+      <td>
+	<%= select_tag "projects", options_for_select(Project.active.collect {|p| [p.name, p.identifier]}), multiple: true, class: 'chosen-select' %>
+</p>
+        <input type="text" id="settings_notification_projects"
+                           value="<%= settings['notification_projects'] %>"
+                           name="settings[notification_projects]" hidden>
+      </td>
+    </tr>
+    <tr>
+      <th>Send event to</th>
+      <td>
+        <input type="text" id="settings_notification_default" 
+                           value="<%= settings['notification_default'] %>" 
+                           name="settings[notification_default]" style="width: 300px" >
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<output style="float: right" id="jsonOutput" class="PRETTY"><span id="p0" class="OBJ">{<br>&nbsp;&nbsp;&nbsp;&nbsp;<span id="px1">"id": <span id="p1" title="Number" class="NUMBER">3</span></span>,
+    <br>&nbsp;&nbsp;&nbsp;&nbsp;<span id="px2">"tracker_id": <span id="p2" title="Number" class="NUMBER">1</span></span>,
+    <br>&nbsp;&nbsp;&nbsp;&nbsp;<span id="px3">"project_id": <span id="p3" title="Number" class="NUMBER">1</span></span>,
+    <br>&nbsp;&nbsp;&nbsp;&nbsp;<span id="px4" style="background: yellow;">"subject": <span id="p4" title="String" class="STRING">"##12312##"</span></span>,
+    <br>&nbsp;&nbsp;&nbsp;&nbsp;<span id="px5">"description": <span id="p5" title="String" class="STRING">""</span></span>,
+    <br>&nbsp;&nbsp;&nbsp;&nbsp;<span id="px6">"due_date": <span id="p6" title="null" class="NULL">null</span></span>,
+    <br>&nbsp;&nbsp;&nbsp;&nbsp;<span id="px7">"category_id": <span id="p7" title="null" class="NULL">null</span></span>,
+    <br>&nbsp;&nbsp;&nbsp;&nbsp;<span id="px8">"status_id": <span id="p8" title="Number" class="NUMBER">2</span></span>,
+    <br>&nbsp;&nbsp;&nbsp;&nbsp;<span id="px9">"assigned_to_id": <span id="p9" title="null" class="NULL">null</span></span>,
+    <br>&nbsp;&nbsp;&nbsp;&nbsp;<span id="px10">"priority_id": <span id="p10" title="Number" class="NUMBER">1</span></span>,
+    <br>&nbsp;&nbsp;&nbsp;&nbsp;<span id="px11">"fixed_version_id": <span id="p11" title="null" class="NULL">null</span></span>,
+    <br>&nbsp;&nbsp;&nbsp;&nbsp;<span id="px12">"author_id": <span id="p12" title="Number" class="NUMBER">1</span></span>,
+    <br>&nbsp;&nbsp;&nbsp;&nbsp;<span id="px13">"lock_version": <span id="p13" title="Number" class="NUMBER">13</span></span>,
+    <br>&nbsp;&nbsp;&nbsp;&nbsp;<span id="px14">"created_on": <span id="p14" title="String" class="STRING">"2016-02-09T13:09:45.110Z"</span></span>,
+    <br>&nbsp;&nbsp;&nbsp;&nbsp;<span id="px15">"updated_on": <span id="p15" title="String" class="STRING">"2016-02-12T10:03:11.799Z"</span></span>,
+    <br>&nbsp;&nbsp;&nbsp;&nbsp;<span id="px16">"start_date": <span id="p16" title="String" class="STRING">"2016-02-09"</span></span>,
+    <br>&nbsp;&nbsp;&nbsp;&nbsp;<span id="px17">"done_ratio": <span id="p17" title="Number" class="NUMBER">0</span></span>,
+    <br>&nbsp;&nbsp;&nbsp;&nbsp;<span id="px18">"estimated_hours": <span id="p18" title="null" class="NULL">null</span></span>,
+    <br>&nbsp;&nbsp;&nbsp;&nbsp;<span id="px19">"parent_id": <span id="p19" title="null" class="NULL">null</span></span>,
+    <br>&nbsp;&nbsp;&nbsp;&nbsp;<span id="px20">"root_id": <span id="p20" title="Number" class="NUMBER">3</span></span>,
+    <br>&nbsp;&nbsp;&nbsp;&nbsp;<span id="px21">"lft": <span id="p21" title="Number" class="NUMBER">1</span></span>,
+    <br>&nbsp;&nbsp;&nbsp;&nbsp;<span id="px22">"rgt": <span id="p22" title="Number" class="NUMBER">2</span></span>,
+    <br>&nbsp;&nbsp;&nbsp;&nbsp;<span id="px23">"is_private": <span id="p23" title="Boolean" class="BOOL">false</span></span>,
+    <br>&nbsp;&nbsp;&nbsp;&nbsp;<span id="px24">"closed_on": <span id="p24" title="null" class="NULL">null</span></span>,
+    <br>&nbsp;&nbsp;&nbsp;&nbsp;<span id="px25" style="background: yellow;">"status_text": <span id="p25" title="String" class="STRING">"Open"</span></span>
+    <br>}</span>
+</output>
+
+<%= stylesheet_link_tag '../javascripts/chosen_v1.5.0/chosen.css', :plugin => 'issue_update_hook' %>
+
+<%= javascript_include_tag 'my_script.js', :plugin => 'issue_update_hook' %>
+<%= javascript_include_tag 'chosen_v1.5.0/chosen.jquery.js', :plugin => 'issue_update_hook' %>
