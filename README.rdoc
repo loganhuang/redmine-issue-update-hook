@@ -1,3 +1,0 @@
-# Issue update hook
-
-Description goes here
