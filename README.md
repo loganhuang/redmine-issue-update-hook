@@ -43,7 +43,7 @@ here the value of `status_text` is issue status e.g. _Open_, _Resolved_, _Closed
 
 ## Install and Configure
 
-1. Follow steps described [here](www.redmine.org/wiki/redmine/Plugins) to installing the plugin
+1. cp -R redmine-issue-update-hook/ /usr/src/redmine/plugins/issue_update_hook/
 2. Go to `Administration->Plugins->Issue update hook plugin`
 3. Choose a project to monitor
 4. Choose an endpoint that should receive the notifications from hook
